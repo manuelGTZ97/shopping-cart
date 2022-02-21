@@ -1,6 +1,9 @@
-function ShoppingProducts({ products }) {
-  const onClick = () => {
-    console.log(products);
+
+
+function ShoppingProducts({ products, product}) {
+  const onClick = (props) => {
+    console.log(props)
+    
   };
 
   return (
@@ -20,7 +23,7 @@ function ShoppingProducts({ products }) {
               <td>{product.quantity}</td>
               <td>
                 {/* You need to use onClick={() => onClick(PRODUCT OBJECT AS PARAMETER)}*/}
-                <button onClick={onClick}>Add to cart</button>
+                <button onClick={()=> onClick(product)}>Add to cart</button>
               </td>
             </tr>
           ))}

@@ -30,11 +30,11 @@ function App() {
     },
   ]);
 
-  const oncClickAddCart = (products) => {
+  const oncClickAddCart = (product) => {
     // instead of name "products" we can use "product"
     // We need to log the product that you clicked.
     // e.g. console.log(product); not console.log(products);
-    setProducts(products.info);
+    setProducts(product.info);
   };
 
   return (
