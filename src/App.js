@@ -30,17 +30,17 @@ function App() {
     },
   ]);
 
-  const oncClickAddCart = (product) => {
+  const onClickAddCart = (product) => {
     // instead of name "products" we can use "product"
     // We need to log the product that you clicked.
     // e.g. console.log(product); not console.log(products);
-    setProducts(product.info);
+    console.log(product);
   };
 
   return (
     <div className="App">
       <Header />
-      <ShoppingProducts products={products} oncClickAddCart={oncClickAddCart} />
+      <ShoppingProducts products={products} onClickAddCart={onClickAddCart} />
       <ShoppingCart />
       <ShoppingTotal />
     </div>

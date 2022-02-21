@@ -1,8 +1,8 @@
 
 
-function ShoppingProducts({ products, product}) {
-  const onClick = (props) => {
-    console.log(props)
+function ShoppingProducts({ products, onClickAddCart}) {
+  const onClick = (info) => {
+    onClickAddCart(info)
     
   };
 
