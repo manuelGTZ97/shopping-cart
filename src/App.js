@@ -11,8 +11,6 @@ import { useState } from "react";
 // 2.- Shopping cart (Product description, Price and Remove from cart button)
 // 3.- Total price
 
-
-
 function App() {
   const [products, setProducts] = useState([
     {
@@ -33,14 +31,16 @@ function App() {
   ]);
 
   const oncClickAddCart = (products) => {
-    setProducts(products.info)
-
-  }
+    // instead of name "products" we can use "product"
+    // We need to log the product that you clicked.
+    // e.g. console.log(product); not console.log(products);
+    setProducts(products.info);
+  };
 
   return (
     <div className="App">
       <Header />
-      <ShoppingProducts products={products} oncClickAddCart={oncClickAddCart}/>
+      <ShoppingProducts products={products} oncClickAddCart={oncClickAddCart} />
       <ShoppingCart />
       <ShoppingTotal />
     </div>
