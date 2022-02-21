@@ -1,9 +1,8 @@
-
-
-function ShoppingProducts({ products, onClickAddCart}) {
+function ShoppingProducts({ products, onClickAddCart }) {
+  // info what?
+  // change the param name to a specific one.
   const onClick = (info) => {
-    onClickAddCart(info)
-    
+    onClickAddCart(info);
   };
 
   return (
@@ -23,7 +22,7 @@ function ShoppingProducts({ products, onClickAddCart}) {
               <td>{product.quantity}</td>
               <td>
                 {/* You need to use onClick={() => onClick(PRODUCT OBJECT AS PARAMETER)}*/}
-                <button onClick={()=> onClick(product)}>Add to cart</button>
+                <button onClick={() => onClick(product)}>Add to cart</button>
               </td>
             </tr>
           ))}
