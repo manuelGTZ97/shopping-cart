@@ -1,6 +1,6 @@
-function ShoppingCart({products, onClickAddCart, removeFromCart }) {
+function ShoppingCart({products, removeFromCart }) {
   const onClick =(product) => {
-    onClick(product)
+    removeFromCart(product)
   }
 
   return (
@@ -18,7 +18,7 @@ function ShoppingCart({products, onClickAddCart, removeFromCart }) {
             <td>0</td>
             <td>0</td>
             <td>
-              <button onClick={() =>removeFromCart(products)}>Remove from cart</button>
+              <button onClick={() =>onClick(products)}>Remove from cart</button>
             </td>
           </tr>
         </tbody>
