@@ -37,6 +37,10 @@ function App() {
     console.log(product);
   };
 
+  // We need to create a function de delete the product on the cart.
+  // create a function onRemoveFromCart. Remember that we need to pass the product to the function.
+  // call the function onRemoveFromCart on ShoppingCart component.
+
   return (
     <div className="App">
       <Header />
