@@ -19,7 +19,7 @@ function ShoppingProducts({ products, onClickAddCart }) {
             <tr>
               <td>{product.name}</td>
               <td>{product.price}</td>
-              <td>{product.quantity}</td>
+              <td>{product.quantity}</td>              
               <td>
                 {/* You need to use onClick={() => onClick(PRODUCT OBJECT AS PARAMETER)}*/}
                 <button onClick={() => onClick(product)}>Add to cart</button>
