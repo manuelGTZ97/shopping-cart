@@ -1,4 +1,4 @@
-function ShoppingCart({products, removeFromCart }) {
+function ShoppingCart({removeFromCart }) {
   const onClick =(product) => {
     removeFromCart(product)
   }
@@ -18,7 +18,7 @@ function ShoppingCart({products, removeFromCart }) {
             <td>0</td>
             <td>0</td>
             <td>
-              <button onClick={() =>onClick(products)}>Remove from cart</button>
+              <button onClick={() =>onClick('')}>Remove from cart</button>
             </td>
           </tr>
         </tbody>
