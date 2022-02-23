@@ -3,6 +3,7 @@ function Header() {
     <header className="shoping-header">
       <h1>Shopping Cart</h1>
     </header>
+    
   );
 }
 

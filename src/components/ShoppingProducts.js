@@ -1,6 +1,12 @@
-function ShoppingProducts({ products }) {
+function ShoppingProducts({ products, onClickAddCart }) {
+  // info what?
+  // change the param name to a specific one.
+  const onClick = (productInfo) => {
+    onClickAddCart(productInfo);
+  };
+
   return (
-    <div className="shoping-products">
+    <div className="shopping-products">
       <table>
         <thead>
           <th>Product</th>
@@ -12,17 +18,19 @@ function ShoppingProducts({ products }) {
           {products.map((product) => (
             <tr>
               <td>{product.name}</td>
-              <td>${product.price}</td>
-              <td>{product.quantity}</td>
+              <td>{product.price}</td>
+              <td>{product.quantity}</td>              
               <td>
-                <button>Add to cart</button>
+                {/* You need to use onClick={() => onClick(PRODUCT OBJECT AS PARAMETER)}*/}
+                <button onClick={() => onClick(product)}>Add to cart</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+
     </div>
   );
 }
-
+//tarea:
 export default ShoppingProducts;
