@@ -1,9 +1,9 @@
-function ShoppingCart({removeFromCart }) {
+function ShoppingCart({cart, removeFromCart }) {
   const onClick =(product) => {
     removeFromCart(product)
   }
 
-  return (
+  return cart?.length !== 0 ? (
     <div className="shoping-cart">
       <table>
         <thead>
@@ -13,18 +13,22 @@ function ShoppingCart({removeFromCart }) {
           <th>Remove from cart</th>
         </thead>
         <tbody>
+          {cart?.map((product) => (
           <tr>
-            <td>Empty</td>
-            <td>0</td>
-            <td>0</td>
+            <td>{product.name}</td>
+            <td>{product.price}</td>
+            <td>{product.quantity}</td>
             <td>
-              <button onClick={() =>onClick('')}>Remove from cart</button>
+              <button onClick={() =>onClick(product)}>Remove from cart</button>
             </td>
-          </tr>
+          </tr>   
+          ))}
         </tbody>
       </table>
     </div>
-  );
+  ): ( 
+    <h1 style={{textAlign: "center"}}>Cart is empty</h1>
+  )
 }
 
 export default ShoppingCart;

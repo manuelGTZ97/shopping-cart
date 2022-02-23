@@ -1,7 +1,9 @@
-function ShoppingTotal() {
+function ShoppingTotal({total}) {
+
+
   return (
     <div className="shoping-total">
-      <h2>Total: $0</h2>
+      <h2>Total: ${total}</h2>
     </div>
   );
 }

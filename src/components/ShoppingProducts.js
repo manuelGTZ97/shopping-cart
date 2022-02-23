@@ -1,6 +1,4 @@
 function ShoppingProducts({ products, onClickAddCart }) {
-  // info what?
-  // change the param name to a specific one.
   const onClick = (productInfo) => {
     onClickAddCart(productInfo);
   };
