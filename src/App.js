@@ -7,31 +7,39 @@ import {
 } from "./components";
 import { useState, useEffect } from "react";
 
+
+function test() {
+  let a = "hola";
+  function b() {
+    console.log(" hola");
+  }
+  return [a, b];
+}
 function App() {
   const [products, setProducts] = useState([
     {
       name: "Chicken",
-      price: "$10",
+      price: 10,
       quantity: 2,
     },
     {
       name: "Beef",
-      price: "$20",
+      price: 20,
       quantity: 3,
     },
     {
       name: "Tomato",
-      price: "$10",
+      price: 10,
       quantity: 10,
     },
   ]);
-  const [total, setTotal] =useState(0);
+  const [total, setTotal] =useState();
 
   const [cart, setCart] = useState([]);
   
   useEffect(() => {
     setTotal(0)
-    console.log("total")
+    console.log(total)
   }, [cart, total])
 
   const onClickAddCart = (product) => {
@@ -50,7 +58,7 @@ function App() {
       <Header />
       <ShoppingProducts products={products} onClickAddCart={onClickAddCart}  />
       <ShoppingCart cart={cart} removeFromCart={removeFromCart}/>
-      <ShoppingTotal total={total} />
+      <ShoppingTotal total={total} products={products} />
     </div>
   );
 }
