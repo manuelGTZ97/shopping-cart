@@ -7,14 +7,16 @@ function ShoppingProducts({ products, onClickAddCart }) {
     <div className="shopping-products">
       <table>
         <thead>
+          <tr>
           <th>Product</th>
           <th>Price</th>
           <th>Quantity</th>
           <th>Add to cart</th>
+          </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
-            <tr>
+          {products.map((product, index) => (
+            <tr key={index}>
               <td>{product.name}</td>
               <td>{product.price}</td>
               <td>{product.quantity}</td>              

@@ -7,14 +7,16 @@ function ShoppingCart({cart, removeFromCart }) {
     <div className="shoping-cart">
       <table>
         <thead>
+          <tr>
           <th>Product</th>
           <th>Price</th>
           <th>Quantity</th>
           <th>Remove from cart</th>
+          </tr>
         </thead>
         <tbody>
-          {cart?.map((product) => (
-          <tr>
+          {cart?.map((product, index) => (
+          <tr key={index}> 
             <td>{product.name}</td>
             <td>{product.price}</td>
             <td>{product.quantity}</td>
@@ -26,7 +28,8 @@ function ShoppingCart({cart, removeFromCart }) {
         </tbody>
       </table>
     </div>
-  ): ( 
+  ): 
+  ( 
     <h1 style={{textAlign: "center"}}>Cart is empty</h1>
   )
 }

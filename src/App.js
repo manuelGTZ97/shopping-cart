@@ -8,13 +8,7 @@ import {
 import { useState, useEffect } from "react";
 
 
-function test() {
-  let a = "hola";
-  function b() {
-    console.log(" hola");
-  }
-  return [a, b];
-}
+
 function App() {
   const [products, setProducts] = useState([
     {
@@ -33,14 +27,16 @@ function App() {
       quantity: 10,
     },
   ]);
-  const [total, setTotal] =useState();
+  const [total, setTotal] =useState(0);
 
   const [cart, setCart] = useState([]);
   
   useEffect(() => {
-    setTotal(0)
-    console.log(total)
-  }, [cart, total])
+    const initialValue = 0;
+    const totalPrice = cart.reduce((prevPrice, currentPrice) => prevPrice + currentPrice.price, initialValue);
+    console.log(totalPrice)
+    setTotal(totalPrice)
+  }, [cart, total,])
 
   const onClickAddCart = (product) => {
         setCart((prevState) => [...prevState, product])
@@ -58,7 +54,7 @@ function App() {
       <Header />
       <ShoppingProducts products={products} onClickAddCart={onClickAddCart}  />
       <ShoppingCart cart={cart} removeFromCart={removeFromCart}/>
-      <ShoppingTotal total={total} products={products} />
+      <ShoppingTotal total={total}/>
     </div>
   );
 }
